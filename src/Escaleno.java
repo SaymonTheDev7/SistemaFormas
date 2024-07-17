@@ -4,6 +4,7 @@ public class Escaleno extends Triangulo {
     private double perimetro = 0;
     private double semiperimetro = 0;
     private double lado1 = 0, lado2 = 0, lado3 = 0;
+
     public Escaleno(double area, double perimetro, double semiperimetro, double lado1, double lado2, double lado3) {
         super(area, perimetro);
 
@@ -17,24 +18,26 @@ public class Escaleno extends Triangulo {
     }
 
     @Override
-    public double area() {
-        return area = Math.sqrt(semiperimetro*(semiperimetro-lado1)*(semiperimetro-lado3));
+    public void area() {
+         area = Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado3));
     }
 
     @Override
-    public double perimetro() {
-        return perimetro = lado1 + lado2 + lado3;
+    public void perimetro() {
+         perimetro = lado1 + lado2 + lado3;
 
     }
 
-    public double semiperimetro () {
+    public double semiperimetro() {
         return semiperimetro = perimetro / 2;
 
     }
 
-    public String toString () {
+    @Override
+    public String toString() {
 
-        return  "/nÁrea:" + area+
+        return "/nTriângulo escaleno:" +
+                "/nÁrea:" + area +
                 "/nPerimetro:" + perimetro +
                 "Semiperímetro:" + semiperimetro;
 

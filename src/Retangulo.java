@@ -8,29 +8,31 @@ public class Retangulo extends Forma {
 
     private double lado2 = 0;
 
-    public Retangulo ( double lado1, double lado2, double area, double perimetro) {
+    public Retangulo(double lado1, double perimetro, double lado2) {
 
         this.lado1 = lado1;
-        this.lado2 = lado2;
-        this.area = area;
         this.perimetro = perimetro;
-
-    }
-    @Override
-    public double area() {
-
-        return area = lado1 * lado2;
+        this.lado2 = lado2;
 
     }
 
     @Override
-    public double perimetro() {
-        return perimetro = 2 * (lado1 +lado2);
+    public void area() {
+
+         area = lado1 * lado2;
+
     }
 
-    public String toString () {
+    @Override
+    public void perimetro() {
+         perimetro = 2 * (lado1 + lado2);
+    }
 
-        return  "/nÁrea:" + area+
+    @Override
+    public String toString() {
+
+        return "/nRetangulo:" +
+                "/nÁrea:" + area +
                 "Perimetro:" + perimetro;
 
     }

@@ -14,19 +14,21 @@ public class Equilatero extends Triangulo {
     }
 
     @Override
-    public double area() {
-        return area = Math.sqrt(3) / 4 * (lado*lado);
+    public void area() {
+         area = Math.sqrt(3) / 4 * (lado * lado);
     }
 
     @Override
-    public double perimetro() {
-        return perimetro = 3 * lado;
+    public void perimetro() {
+         perimetro = 3 * lado;
 
     }
 
-    public String toString () {
+    @Override
+    public String toString() {
 
-        return  "/nÁrea:" + area+
+        return "/nTriângulo equilatero:" +
+                "/nÁrea:" + area +
                 "Perimetro:" + perimetro;
 
     }

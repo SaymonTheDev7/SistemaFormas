@@ -2,23 +2,24 @@ public abstract class Forma {
 
     private static int gerador = 0;
     private int codigo = 0;
+    private String nome;
 
-    public Forma () {
+    public Forma() {
 
         gerador++;
         codigo = gerador;
 
     }
 
-    public abstract double area();
+    public abstract void area();
 
-    public abstract double perimetro();
+    public abstract void perimetro();
 
     @Override
 
-    public String toString () {
+    public String toString() {
 
-        return "\nGerador automático:" + gerador;
+        return "/nGerador automático:" + gerador;
 
     }
 }

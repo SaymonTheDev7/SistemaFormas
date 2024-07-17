@@ -1,38 +1,33 @@
-public class Quadrado extends Retangulo {
+public class Quadrado extends Forma {
 
     private double lado = 0;
-
     private double area = 0;
-
     private double perimetro = 0;
 
-
-    public Quadrado(double lado1, double lado2, double area, double perimetro) {
-        super(lado1, lado2, area, perimetro);
-
+    public Quadrado(double lado1, double lado2) {
         this.lado = lado1;
-        this.area = area;
-        this.perimetro = perimetro;
-
+        this.lado = lado2;
     }
 
     @Override
 
-    public double area () {
+    public void area() {
 
-        return area = lado * (lado+lado);
-
-    }
-
-    public double perimetro () {
-
-        return perimetro = lado * 4;
+         area = lado * (lado + lado);
 
     }
 
-    public String toString () {
+    public void perimetro() {
 
-        return  "/nÁrea:" + area+
+         perimetro = lado * 4;
+
+    }
+
+    @Override
+    public String toString() {
+
+        return "/nQuadrado:" +
+                "/nÁrea:" + area +
                 "Perimetro:" + perimetro;
 
     }
