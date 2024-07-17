@@ -13,14 +13,19 @@ public class Main {
 
         System.out.println(" Bem vindo a calculadora geométrica ");
 
-        String user = "0";
-        String password = "0";
+        String user = "ProfessorADM";
+        String password = "professor";
+        int erro = 0;
 
-        while (!user.equals(usuario.getUser()) && !password.equals(usuario.getPassword())) {
+        while (!user.equals(usuario.getUser())) {
 
             System.out.println(" Insira o seu login: ");
             user = sc.next();
 
+            if (!user.equals(usuario.getUser())) {
+
+                System.out.println(" Login inválido ");
+            }
         }
 
         while (!password.equals(usuario.getPassword())) {
@@ -28,6 +33,30 @@ public class Main {
             System.out.println(" Insira sua senha: ");
             password = sc.next();
 
+            if ( !password.equals(usuario.getPassword())) {
+
+                erro++;
+
+            }
+
+            if (erro == 1) {
+
+                System.out.println(" Senha incorreta: 2 tentativas restantes. ");
+
+            }
+
+            if (erro == 2) {
+
+                System.out.println(" Senha incorreta: 1 tentativa restante. ");
+
+            }
+
+            if (erro == 3) {
+
+                System.out.println(" Senha incorreta: Sistema finalizado. ");
+                System.exit(0);
+
+            }
         }
 
 
@@ -40,7 +69,7 @@ public class Main {
             System.out.println(" |                                                        |");
             System.out.println(" |   1 - Adicionar forma               2 - Ver formas     |");
             System.out.println(" |                                                        |");
-            System.out.println(" |                      0 - logout                        |");
+            System.out.println(" |   3 - Menu de listas                0 - Logout         |");
             System.out.println(" |                                                        |");
             System.out.println(" --------------------------------------------------------- ");
             escolha = sc.nextInt();
@@ -147,7 +176,7 @@ public class Main {
 
                 for ( Forma forma : FORMAS ) {
 
-                    
+
 
                 }
             }
