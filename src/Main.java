@@ -56,9 +56,9 @@ public class Main {
             }
         }
 
-        int escolhaMenu = 0;
+        int escolhaMenu = 1;
 
-        while (escolhaMenu == 0) {
+        while (escolhaMenu != 0) {
 
             System.out.println("----------------------------------------------------------");
             System.out.println("|                   Menu de escolhas                      |");
@@ -74,6 +74,26 @@ public class Main {
             int escolhaForma = 1;
 
             switch (escolhaMenu) {
+
+                case 0: {
+
+                    password = "Art";
+
+                    while (!password.equals(usuario.getPassword())) {
+
+                        System.out.println("Insira a sua senha para fazer logout:");
+                        password = sc.next();
+
+                        if (password.equals(usuario.getPassword())) {
+
+                            System.out.println("Sistema sendo finalizado.");
+                            System.exit(0);
+
+                        }
+                    }
+                }
+
+                break;
 
                 case 1: {
 
