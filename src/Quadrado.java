@@ -23,9 +23,9 @@ public class Quadrado extends Forma {
     @Override
     public String toString() {
 
-        return "/nQuadrado:" +
-                "/nÁrea:" + area() +
-                "Perimetro:" + perimetro();
+        return "\nQuadrado:" +
+                "\nÁrea:" + area() +
+                "\nPerimetro:" + perimetro();
 
     }
 }

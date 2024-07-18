@@ -14,40 +14,40 @@ public class Main {
         String password = "Art";
         int erro = 0;
 
-        while ( ! user.equals(usuario.getUser())) {
+        while (!user.equals(usuario.getUser())) {
 
             System.out.println("Insira o seu login:");
             user = sc.next();
 
-            if ( ! user.equals(usuario.getUser())) {
+            if (!user.equals(usuario.getUser())) {
 
                 System.out.println("Login inválido, tente novamente:");
 
             }
         }
 
-        while ( ! password.equals(usuario.getPassword())) {
+        while (!password.equals(usuario.getPassword())) {
 
             System.out.println("Insira a sua senha:");
             password = sc.next();
 
-            if ( ! password.equals(usuario.getPassword())) {
+            if (!password.equals(usuario.getPassword())) {
 
-                erro ++;
+                erro++;
 
-                if ( erro == 1 ) {
+                if (erro == 1) {
 
                     System.out.println("Senha inválida. Tentativas restantes: 2");
 
                 }
 
-                if ( erro == 2 ) {
+                if (erro == 2) {
 
                     System.out.println("Senha inválida. Tentativas restantes: 1");
 
                 }
 
-                if ( erro == 3 ) {
+                if (erro == 3) {
 
                     System.out.println("Senha inválida. Sistema sendo finalizado.");
                     System.exit(0);
@@ -56,28 +56,28 @@ public class Main {
             }
         }
 
-        int escolhaMenu = 1;
+        int escolhaMenu = 0;
 
-        while ( escolhaMenu != 0 ) {
+        while (escolhaMenu == 0) {
 
             System.out.println("----------------------------------------------------------");
             System.out.println("|                   Menu de escolhas                      |");
             System.out.println("|                                                         |");
-            System.out.println("|     1 - Adicionar forma.          2 - Remover forma.    |");
+            System.out.println("|    1 - Adicionar forma.          2 - Remover forma.     |");
             System.out.println("|                                                         |");
-            System.out.println("|     2 - Listar formas.            3 - Menu de listas    |");
+            System.out.println("|    3 - Listar formas.            4 - Menu de listas.    |");
             System.out.println("|                                                         |");
-            System.out.println("|                        0 - Logout                       |");
+            System.out.println("|                       0 - Logout                        |");
             System.out.println("----------------------------------------------------------");
             escolhaMenu = sc.nextInt();
 
             int escolhaForma = 1;
 
-            switch ( escolhaMenu ) {
+            switch (escolhaMenu) {
 
-                case 1 : {
+                case 1: {
 
-                    while ( escolhaForma != 5 ) {
+                    while (escolhaForma != 5) {
 
                         System.out.println("1. Adicionar círculo");
                         System.out.println("2. Adicionar quadrado");
@@ -88,25 +88,156 @@ public class Main {
 
                         if (escolhaForma == 1) {
 
-                            System.out.println("Insira o raio do círculo");
+                            System.out.println("Insira o raio do círculo:");
                             double raio = sc.nextDouble();
 
-                            if ( raio < 0 ) {
+                            if (raio < 0) {
 
                                 System.out.println("Raio inválido");
 
-                            }
-
-                            else {
+                            } else {
 
                                 Forma circulo = new Circunferencia(raio);
                                 operaçoesMain.adicionarItem(circulo);
                                 System.out.println("Círculo cadastrado com sucesso");
 
                             }
+                        } else if (escolhaForma == 2) {
+
+                            System.out.println("Insira o lado do quadrado:");
+                            double lado = sc.nextDouble();
+
+                            if (lado < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            } else {
+
+                                Forma quadrado = new Quadrado(lado);
+                                operaçoesMain.adicionarItem(quadrado);
+                                System.out.println("Quadrado castrado com sucesso");
+
+                            }
+                        } else if (escolhaForma == 3) {
+
+                            System.out.println("Insira o primeiro lado do retângulo:");
+                            double lado = sc.nextDouble();
+
+                            if (lado < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            }
+
+                            System.out.println("Insira o segundo lado do retângulo:");
+                            double lado1 = sc.nextDouble();
+
+                            if (lado1 < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            } else {
+
+                                Forma retangulo = new Retangulo(lado, lado1);
+                                operaçoesMain.adicionarItem(retangulo);
+                                System.out.println("Retângulo cadastrado com seucesso");
+
+                            }
+                        } else if (escolhaForma == 4) {
+
+                            System.out.println("Insira o primeiro lado do triângulo");
+                            double lado = sc.nextDouble();
+
+                            if (lado < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            }
+
+                            System.out.println("Insira o segundo lado do triângulo:");
+                            double lado1 = sc.nextDouble();
+
+                            if (lado1 < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            }
+
+                            System.out.println("Insira o segundo lado do triângulo:");
+                            double lado2 = sc.nextDouble();
+
+                            if (lado2 < 0) {
+
+                                System.out.println("Lado inválido");
+
+                            } else {
+
+                                if (lado != lado1 && lado != lado2 && lado1 != lado && lado1 != lado2 && lado2 != lado && lado2 != lado1) {
+
+                                    Forma trianguloEscaleno = new Escaleno(lado, lado1, lado2);
+                                    operaçoesMain.adicionarItem(trianguloEscaleno);
+                                    System.out.println("Triângulo Escaleno adicionado com sucesso.");
+
+                                } else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
+
+                                    Forma trianguloEquilatero = new Equilatero(lado, lado1, lado2);
+                                    operaçoesMain.adicionarItem(trianguloEquilatero);
+                                    System.out.println("Triângulo Equilatero adicionado com sucesso.");
+
+                                } else {
+
+                                    Forma trianguloIsosceles = new Isosceles(lado, lado1, lado2);
+                                    operaçoesMain.adicionarItem(trianguloIsosceles);
+                                    System.out.println("Triângulo Isósceles adicionado com sucesso.");
+
+                                }
+                            }
                         }
+                    }
+                }
+
+                break;
+
+                case 2: {
+
+                    int codigo = 0;
+
+                    System.out.println(operaçoesMain.listarItens());
+
+                    System.out.println("Insira o código da forma que deseja remover");
+
+                    codigo = sc.nextInt();
+
+                    while (codigo >= operaçoesMain.getFORMAS().size() && codigo <= operaçoesMain.getFORMAS().size()) {
+
+                        System.out.println("Código inexistente. Insira novamente:");
+                        codigo = sc.nextInt();
+
+                    }
+
+                    operaçoesMain.removerItem(codigo);
+                    System.out.println("Forma removida com sucesso.");
 
                 }
+
+                break;
+
+                case 3: {
+
+                    if (operaçoesMain.getFORMAS().size() == 0) {
+
+                        System.out.println("Nenhuma forma cadastrada.");
+
+                    } else {
+
+                        System.out.println("Lista de formas:");
+                        System.out.println(operaçoesMain.listarItens());
+
+                    }
+                }
+
+                break;
+
             }
         }
     }

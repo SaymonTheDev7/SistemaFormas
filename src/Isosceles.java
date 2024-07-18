@@ -1,35 +1,36 @@
 public class Isosceles extends Triangulo {
-    
-    public Isosceles(double area, double perimetro, double ladoDif, double ladoIgu) {
-        super(area, perimetro);
-        this.ladoDif = ladoDif;
-        this.ladoIgu = ladoIgu;
-    }
 
 
-    @Override
-    public void area() {
-         area = ladoDif * altura / 2;
+    public Isosceles(double lado1, double lado2, double lado3) {
+        super(lado1, lado2, lado3);
     }
 
     @Override
-    public void perimetro() {
-        perimetro = ladoDif + 2 * ladoIgu;
+    public double area () {
+
+        return getLado1() * altura() / 2;
+
     }
 
-    public double altura() {
+    @Override
+    public double perimetro () {
 
-        return Math.sqrt((ladoIgu * ladoIgu) - (ladoDif * ladoDif) / 4);
+        return getLado1() + 2 * getLado2();
+
+    }
+    public double altura () {
+
+        return Math.sqrt(Math.pow(getLado2(), 2 - Math.pow(getLado2(), 2) / 4));
 
     }
 
     @Override
     public String toString() {
 
-        return "/nTriângulo isósceles:" +
-                "/nÁrea:" + area +
-                "/nPerimetro:" + perimetro +
-                "Altura:" + altura;
+        return "\nTriângulo Isósceles:" +
+                "\nÁrea:" + area() +
+                "\nPerimetro:" + perimetro() +
+                "\nAltura:" + altura();
 
     }
 }

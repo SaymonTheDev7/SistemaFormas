@@ -1,35 +1,27 @@
 public class Equilatero extends Triangulo {
-
-    private double area = 0;
-    private double perimetro = 0;
-    private double lado = 0;
-
-    public Equilatero(double area, double perimetro, double lado) {
-
-        super(area, perimetro);
-        this.area = area;
-        this.perimetro = perimetro;
-        this.lado = lado;
-
+    public Equilatero(double lado1, double lado2, double lado3) {
+        super(lado1, lado2, lado3);
     }
 
     @Override
-    public void area() {
-         area = Math.sqrt(3) / 4 * (lado * lado);
+    public double area() {
+
+        return Math.sqrt(3) / 4 * Math.pow(getLado1(), 2);
+
     }
 
-    @Override
-    public void perimetro() {
-         perimetro = 3 * lado;
+    public double perimetro () {
+
+        return 3 * getLado1();
 
     }
 
     @Override
     public String toString() {
 
-        return "/nTriângulo equilatero:" +
-                "/nÁrea:" + area +
-                "Perimetro:" + perimetro;
+        return "\nTriângulo Equilatero:" +
+                "\nÁrea:" + area() +
+                "\nPerimetro:" + perimetro();
 
     }
 }

@@ -16,13 +16,25 @@ public class OperaçoesMain {
 
     }
 
-    public String listarItens(Forma forma) {
+    public ArrayList<Forma> getFORMAS() {
+        return FORMAS;
+    }
+
+
+    public String listarItens() {
 
         String formas = "";
 
-        for ( Forma listaFormas : FORMAS ){
+        int codigo = 0;
 
-                formas += listaFormas + "\n" + "--------------------";
+        for (Forma listaFormas : FORMAS) {
+
+
+            formas += listaFormas +
+                    "\n" + "Código da forma: " + codigo +
+                    "\n--------------------";
+
+            codigo++;
 
         }
 
