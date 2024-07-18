@@ -1,25 +1,22 @@
 public class Quadrado extends Forma {
 
     private double lado = 0;
-    private double area = 0;
-    private double perimetro = 0;
 
-    public Quadrado(double lado1, double lado2) {
-        this.lado = lado1;
-        this.lado = lado2;
+    public Quadrado(double lado) {
+        this.lado = lado;
     }
 
     @Override
 
-    public void area() {
+    public double area() {
 
-         area = lado * (lado + lado);
+         return lado * lado;
 
     }
 
-    public void perimetro() {
+    public double perimetro() {
 
-         perimetro = lado * 4;
+        return lado * 4;
 
     }
 
@@ -27,8 +24,8 @@ public class Quadrado extends Forma {
     public String toString() {
 
         return "/nQuadrado:" +
-                "/nÁrea:" + area +
-                "Perimetro:" + perimetro;
+                "/nÁrea:" + area() +
+                "Perimetro:" + perimetro();
 
     }
 }

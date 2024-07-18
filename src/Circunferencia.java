@@ -1,44 +1,33 @@
 public class Circunferencia extends Forma {
 
-    private double area = 0;
-    private double perimetro = 0;
-    private double diametro = 0;
+
     private double raio = 0;
 
-    public Circunferencia(double area, double raio, double perimetro, double diametro) {
+    public Circunferencia( double raio) {
 
         this.raio = raio;
-        this.perimetro = perimetro;
-        this.diametro = diametro;
-        this.area = area;
 
     }
 
     @Override
 
-    public void area() {
+    public double area() {
 
-         area = Math.PI * (raio * raio);
+         return Math.PI * (raio * raio);
 
     }
 
     @Override
 
-    public void perimetro() {
+    public double perimetro() {
 
-         perimetro = Math.PI * diametro;
-
-    }
-
-    public void diametro() {
-
-        diametro = raio * (raio * raio);
+         return Math.PI * diametro();
 
     }
 
-    public double raio() {
+    public double diametro() {
 
-        return raio = diametro / 2;
+        return 2 * raio;
 
     }
 
@@ -46,9 +35,9 @@ public class Circunferencia extends Forma {
     public String toString() {
 
         return  "\nCírculo:" +
-                "\nÁrea:" + area +
-                "\nPerimetro:" + perimetro +
-                "\nDiâmetro:" + diametro +
+                "\nÁrea:" + area() +
+                "\nPerimetro:" + perimetro() +
+                "\nDiâmetro:" + diametro() +
                 "\nRaio:" + raio;
 
     }

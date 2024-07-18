@@ -1,11 +1,5 @@
 public class Isosceles extends Triangulo {
-
-    private double ladoDif = 0;
-    private double ladoIgu = 0;
-    private double area = 0;
-    private double perimetro = 0;
-    private double altura = 0;
-
+    
     public Isosceles(double area, double perimetro, double ladoDif, double ladoIgu) {
         super(area, perimetro);
         this.ladoDif = ladoDif;
