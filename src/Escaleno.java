@@ -30,8 +30,8 @@ public class Escaleno extends Triangulo {
         return "\nTriângulo Escaleno:" +
                 "\nÁrea:" + area() +
                 "\nPerimetro:" + perimetro() +
-                "\nSemiperímetro:" + semiperimetro() +
-                "\n-----------------------------";
+                "\nSemiperímetro:" + semiperimetro();
+
 
     }
 }

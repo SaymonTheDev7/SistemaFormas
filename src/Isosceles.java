@@ -31,8 +31,8 @@ public class Isosceles extends Triangulo {
         return "\nTriângulo Isósceles:" +
                 "\nÁrea:" + area() +
                 "\nPerimetro:" + perimetro() +
-                "\nAltura:" + altura() +
-                "\n-----------------------------";
+                "\nAltura:" + altura();
+
 
     }
 }

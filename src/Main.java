@@ -1,3 +1,4 @@
+import java.text.Normalizer;
 import java.util.Scanner;
 
 public class Main {
@@ -8,11 +9,29 @@ public class Main {
         Usuario usuario = new Usuario("Artur", "ArturAdm");
         OperaçoesMain operaçoesMain = new OperaçoesMain();
 
-        System.out.println("Bem vindo a calculadora geométrica ☕");
+        System.out.println("Bem vindo a calculadora geométrica. ☕");
 
         String user = "Art";
         String password = "Art";
         int erro = 0;
+
+        Forma circunferencia1 = new Circunferencia(7);
+        operaçoesMain.adicionarItem(circunferencia1);
+
+        Forma retangulo1 = new Retangulo(2,30);
+        operaçoesMain.adicionarItem(retangulo1);
+
+        Forma quadrado1 = new Quadrado(20);
+        operaçoesMain.adicionarItem(quadrado1);
+
+        Forma isosceles1 = new Isosceles(10,10,12);
+        operaçoesMain.adicionarItem(isosceles1);
+
+        Forma escaleno1 = new Escaleno(2,9,11);
+        operaçoesMain.adicionarItem(escaleno1);
+
+        Forma equilatero1 = new Equilatero(20,20,20);
+        operaçoesMain.adicionarItem(equilatero1);
 
         while (!user.equals(usuario.getUser())) {
 
@@ -43,9 +62,7 @@ public class Main {
 
                     System.out.println("Senha inválida. Tentativas restantes: 1");
 
-                } else
-
-                {
+                } else {
 
                     System.out.println("Senha inválida. Sistema sendo finalizado.");
                     System.exit(0);
@@ -82,9 +99,15 @@ public class Main {
                         System.out.println("Insira a sua senha para fazer logout:");
                         password = sc.next();
 
+                        if (!password.equals(usuario.getPassword())) {
+
+                            System.out.println("Senha inválida.");
+
+                        }
+
                         if (password.equals(usuario.getPassword())) {
 
-                            System.out.println("Volte sempre ☕");
+                            System.out.println("Volte sempre ! ☕");
                             System.exit(0);
 
                         }
@@ -109,7 +132,7 @@ public class Main {
                             System.out.println("Insira o raio do círculo:");
                             double raio = sc.nextDouble();
 
-                            if (raio < 0) {
+                            if (raio <= 0) {
 
                                 System.out.println("Raio inválido.");
 
@@ -125,7 +148,7 @@ public class Main {
                             System.out.println("Insira o lado do quadrado:");
                             double lado = sc.nextDouble();
 
-                            if (lado < 0) {
+                            if (lado <= 0) {
 
                                 System.out.println("Lado inválido.");
 
@@ -142,7 +165,7 @@ public class Main {
                             System.out.println("Insira o primeiro lado do retângulo:");
                             double lado = sc.nextDouble();
 
-                            if (lado < 0) {
+                            if (lado <= 0) {
 
                                 System.out.println("Lado inválido.");
 
@@ -151,7 +174,7 @@ public class Main {
                             System.out.println("Insira o segundo lado do retângulo:");
                             double lado1 = sc.nextDouble();
 
-                            if (lado1 < 0) {
+                            if (lado1 <= 0) {
 
                                 System.out.println("Lado inválido.");
 
@@ -168,7 +191,7 @@ public class Main {
                             System.out.println("Insira o primeiro lado do triângulo.");
                             double lado = sc.nextDouble();
 
-                            if (lado < 0) {
+                            if (lado <= 0) {
 
                                 System.out.println("Lado inválido.");
 
@@ -177,7 +200,7 @@ public class Main {
                             System.out.println("Insira o segundo lado do triângulo:");
                             double lado1 = sc.nextDouble();
 
-                            if (lado1 < 0) {
+                            if (lado1 <= 0) {
 
                                 System.out.println("Lado inválido.");
 
@@ -186,13 +209,13 @@ public class Main {
                             System.out.println("Insira o terceiro lado do triângulo:");
                             double lado2 = sc.nextDouble();
 
-                            if (lado2 < 0 ) {
+                            if (lado2 <= 0) {
 
                                 System.out.println("Lado inválido.");
 
                             }
 
-                            if ( lado < lado1+lado2 && lado1 < lado+lado2 && lado2 < lado+lado1) {
+                            if (lado < lado1 + lado2 && lado1 < lado + lado2 && lado2 < lado + lado1) {
 
                                 if (lado != lado1 && lado != lado2 && lado1 != lado && lado1 != lado2 && lado2 != lado && lado2 != lado1) {
 
@@ -200,17 +223,13 @@ public class Main {
                                     operaçoesMain.adicionarItem(trianguloEscaleno);
                                     System.out.println("Triângulo Escaleno adicionado com sucesso.");
 
-                                }
-
-                                else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
+                                } else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
 
                                     Forma trianguloEquilatero = new Equilatero(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloEquilatero);
                                     System.out.println("Triângulo Equilatero adicionado com sucesso.");
 
-                                }
-
-                                else {
+                                } else {
 
                                     Forma trianguloIsosceles = new Isosceles(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloIsosceles);
@@ -218,9 +237,7 @@ public class Main {
 
                                 }
 
-                            }
-
-                            else {
+                            } else {
 
                                 System.out.println("Triângulo inválido.");
 
@@ -245,9 +262,7 @@ public class Main {
 
                         System.out.println("Código inexistente.");
 
-                    }
-
-                    else {
+                    } else {
 
                         operaçoesMain.removerItem(codigo);
                         System.out.println("Forma removida com sucesso.");

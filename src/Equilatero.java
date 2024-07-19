@@ -21,8 +21,8 @@ public class Equilatero extends Triangulo {
 
         return "\nTriângulo Equilatero:" +
                 "\nÁrea:" + area() +
-                "\nPerimetro:" + perimetro() +
-                "\n-----------------------------";
+                "\nPerimetro:" + perimetro();
+
 
     }
 }
