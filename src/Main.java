@@ -258,6 +258,40 @@ public class Main {
 
                 break;
 
+                case 4 : {
+
+                    int escolhaLista = 0;
+
+                    while (escolhaLista != 5 ) {
+
+                        System.out.println("Insira o número da lista que deseja ver:");
+                        System.out.println("1.Listar Círculos.");
+                        System.out.println("2.Listar Quadrados.");
+                        System.out.println("3.Listar Retangulos");
+                        System.out.println("4.Listar Triângulos.");
+                        System.out.println("5.Voltar.");
+                        escolhaLista = sc.nextInt();
+
+                        if ( escolhaLista == 1) {
+
+                            int contadorCirculo = 0;
+
+                            for ( Forma forma : operaçoesMain.getFORMAS() ) {
+
+                                if ( forma instanceof Circunferencia ) {
+                                    System.out.println( forma );
+                                    contadorCirculo++;
+                                }
+                            }
+
+                            if ( contadorCirculo == 0 ) {
+
+                                System.out.println("Nenhum círculo foi adicionado ainda.");
+
+                            }
+                        }
+                    }
+                }
             }
         }
     }
