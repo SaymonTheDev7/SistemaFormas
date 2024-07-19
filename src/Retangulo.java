@@ -20,7 +20,7 @@ public class Retangulo extends Forma {
     @Override
     public double perimetro() {
 
-        return  2 * ( lado + lado1 );
+        return 2 * (lado + lado1);
 
     }
 

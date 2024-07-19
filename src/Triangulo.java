@@ -14,7 +14,7 @@ public abstract class Triangulo extends Forma {
 
     @Override
 
-    public double perimetro () {
+    public double perimetro() {
 
         return lado1 + lado2 + lado3;
 

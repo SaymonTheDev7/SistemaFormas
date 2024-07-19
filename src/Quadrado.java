@@ -10,7 +10,7 @@ public class Quadrado extends Forma {
 
     public double area() {
 
-         return lado * lado;
+        return lado * lado;
 
     }
 

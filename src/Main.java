@@ -39,15 +39,11 @@ public class Main {
 
                     System.out.println("Senha inválida. Tentativas restantes: 2");
 
-                }
-
-                if (erro == 2) {
+                } else if (erro == 2) {
 
                     System.out.println("Senha inválida. Tentativas restantes: 1");
 
-                }
-
-                if (erro == 3) {
+                } else if (erro == 3) {
 
                     System.out.println("Senha inválida. Sistema sendo finalizado.");
                     System.exit(0);
@@ -86,7 +82,7 @@ public class Main {
 
                         if (password.equals(usuario.getPassword())) {
 
-                            System.out.println("Sistema sendo finalizado.");
+                            System.out.println("Volte sempre ☕");
                             System.exit(0);
 
                         }
@@ -113,13 +109,13 @@ public class Main {
 
                             if (raio < 0) {
 
-                                System.out.println("Raio inválido");
+                                System.out.println("Raio inválido.");
 
                             } else {
 
                                 Forma circulo = new Circunferencia(raio);
                                 operaçoesMain.adicionarItem(circulo);
-                                System.out.println("Círculo cadastrado com sucesso");
+                                System.out.println("Círculo cadastrado com sucesso.");
 
                             }
                         } else if (escolhaForma == 2) {
@@ -129,15 +125,16 @@ public class Main {
 
                             if (lado < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             } else {
 
                                 Forma quadrado = new Quadrado(lado);
                                 operaçoesMain.adicionarItem(quadrado);
-                                System.out.println("Quadrado castrado com sucesso");
+                                System.out.println("Quadrado castrado com sucesso.");
 
                             }
+
                         } else if (escolhaForma == 3) {
 
                             System.out.println("Insira o primeiro lado do retângulo:");
@@ -145,7 +142,7 @@ public class Main {
 
                             if (lado < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             }
 
@@ -154,23 +151,23 @@ public class Main {
 
                             if (lado1 < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             } else {
 
                                 Forma retangulo = new Retangulo(lado, lado1);
                                 operaçoesMain.adicionarItem(retangulo);
-                                System.out.println("Retângulo cadastrado com seucesso");
+                                System.out.println("Retângulo cadastrado com seucesso.");
 
                             }
                         } else if (escolhaForma == 4) {
 
-                            System.out.println("Insira o primeiro lado do triângulo");
+                            System.out.println("Insira o primeiro lado do triângulo.");
                             double lado = sc.nextDouble();
 
                             if (lado < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             }
 
@@ -179,7 +176,7 @@ public class Main {
 
                             if (lado1 < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             }
 
@@ -188,7 +185,7 @@ public class Main {
 
                             if (lado2 < 0) {
 
-                                System.out.println("Lado inválido");
+                                System.out.println("Lado inválido.");
 
                             } else {
 
@@ -224,7 +221,7 @@ public class Main {
 
                     System.out.println(operaçoesMain.listarItens());
 
-                    System.out.println("Insira o código da forma que deseja remover");
+                    System.out.println("Insira o código da forma que deseja remover.");
 
                     codigo = sc.nextInt();
 
@@ -258,36 +255,164 @@ public class Main {
 
                 break;
 
-                case 4 : {
+                case 4: {
 
                     int escolhaLista = 0;
 
-                    while (escolhaLista != 5 ) {
+                    while (escolhaLista != 5) {
 
                         System.out.println("Insira o número da lista que deseja ver:");
-                        System.out.println("1.Listar Círculos.");
-                        System.out.println("2.Listar Quadrados.");
-                        System.out.println("3.Listar Retangulos");
-                        System.out.println("4.Listar Triângulos.");
+                        System.out.println("1.Listar círculos.");
+                        System.out.println("2.Listar quadrados.");
+                        System.out.println("3.Listar retangulos");
+                        System.out.println("4.Menu dos triângulos.");
                         System.out.println("5.Voltar.");
                         escolhaLista = sc.nextInt();
 
-                        if ( escolhaLista == 1) {
+                        if (escolhaLista == 1) {
 
                             int contadorCirculo = 0;
 
-                            for ( Forma forma : operaçoesMain.getFORMAS() ) {
+                            for (Forma forma : operaçoesMain.getFORMAS()) {
 
-                                if ( forma instanceof Circunferencia ) {
-                                    System.out.println( forma );
+                                if (forma instanceof Circunferencia) {
+                                    System.out.println(forma);
                                     contadorCirculo++;
                                 }
                             }
 
-                            if ( contadorCirculo == 0 ) {
+                            if (contadorCirculo == 0) {
 
                                 System.out.println("Nenhum círculo foi adicionado ainda.");
 
+                            }
+                        } else if (escolhaLista == 2) {
+
+                            int contadorQuadrado = 0;
+
+                            for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                if (forma instanceof Quadrado) {
+                                    System.out.println(forma);
+                                    contadorQuadrado++;
+
+                                }
+                            }
+
+                            if (contadorQuadrado == 0) {
+
+                                System.out.println("Nenhum quadrado foi adicionado ainda.");
+                            }
+                        } else if (escolhaLista == 3) {
+
+                            int contadorRetangulo = 0;
+
+                            for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                if (forma instanceof Retangulo) {
+                                    System.out.println(forma);
+                                    contadorRetangulo++;
+
+                                }
+                            }
+
+                            if (contadorRetangulo == 0) {
+
+                                System.out.println("Nenhum retângulo foi adicionado ainda");
+
+                            }
+                        } else if (escolhaLista == 4) {
+
+                            int escolhaTriangulo = 0;
+
+                            while (escolhaTriangulo != 5) {
+
+                                System.out.println("Insira o número da lista do triângulo que deseja ver:");
+                                System.out.println("1.Listar triângulos Isósceles.");
+                                System.out.println("2.Listar triângulos Equilateros.");
+                                System.out.println("3.Listar triângulos Escalenos.");
+                                System.out.println("4.Listar todos os triângulos.");
+                                System.out.println("5.Voltar.");
+                                escolhaTriangulo = sc.nextInt();
+
+
+                                if (escolhaTriangulo == 1) {
+
+                                    int contadorIsosceles = 0;
+
+                                    for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                        if (forma instanceof Isosceles) {
+
+                                            System.out.println(forma);
+                                            contadorIsosceles++;
+
+                                        }
+                                    }
+
+                                    if (contadorIsosceles == 0) {
+
+                                        System.out.println("Nenhum triângulo Isósceles foi adicionado ainda.");
+
+                                    }
+                                } else if (escolhaTriangulo == 2) {
+
+                                    int contadorEquilatero = 0;
+
+                                    for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                        if (forma instanceof Equilatero) {
+
+                                            System.out.println(forma);
+                                            contadorEquilatero++;
+
+                                        }
+                                    }
+
+                                    if (contadorEquilatero == 0) {
+
+                                        System.out.println("Nenhum triângulo Equilatero foi adicionado ainda. ");
+
+                                    }
+                                } else if (escolhaTriangulo == 3) {
+
+                                    int contadorEscaleno = 0;
+
+                                    for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                        if (forma instanceof Escaleno) {
+
+                                            System.out.println(forma);
+                                            contadorEscaleno++;
+
+                                        }
+                                    }
+
+                                    if (contadorEscaleno == 0) {
+
+                                        System.out.println("Nenhum triângulo Escaleno foi adicionado ainda.");
+
+                                    }
+                                } else if (escolhaTriangulo == 4) {
+
+                                    int contadorTodos = 0;
+
+                                    for (Forma forma : operaçoesMain.getFORMAS()) {
+
+                                        if (forma instanceof Triangulo) {
+
+                                            System.out.println(forma);
+                                            contadorTodos++;
+
+                                        }
+                                    }
+
+                                    if (contadorTodos == 0) {
+
+                                        System.out.println("Nenhum triângulo foi adicionado ainda.");
+
+                                    }
+                                }
                             }
                         }
                     }

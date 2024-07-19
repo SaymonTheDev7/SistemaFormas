@@ -10,7 +10,7 @@ public class Equilatero extends Triangulo {
 
     }
 
-    public double perimetro () {
+    public double perimetro() {
 
         return 3 * getLado1();
 
@@ -21,7 +21,8 @@ public class Equilatero extends Triangulo {
 
         return "\nTriângulo Equilatero:" +
                 "\nÁrea:" + area() +
-                "\nPerimetro:" + perimetro();
+                "\nPerimetro:" + perimetro() +
+                "\n-----------------------------";
 
     }
 }

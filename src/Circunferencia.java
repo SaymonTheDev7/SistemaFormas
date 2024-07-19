@@ -3,7 +3,7 @@ public class Circunferencia extends Forma {
 
     private double raio = 0;
 
-    public Circunferencia( double raio) {
+    public Circunferencia(double raio) {
 
         this.raio = raio;
 
@@ -13,7 +13,7 @@ public class Circunferencia extends Forma {
 
     public double area() {
 
-         return Math.PI * (raio * raio);
+        return Math.PI * (raio * raio);
 
     }
 
@@ -21,7 +21,7 @@ public class Circunferencia extends Forma {
 
     public double perimetro() {
 
-         return Math.PI * diametro();
+        return Math.PI * diametro();
 
     }
 
@@ -34,7 +34,7 @@ public class Circunferencia extends Forma {
     @Override
     public String toString() {
 
-        return  "\nCírculo:" +
+        return "\nCírculo:" +
                 "\nÁrea:" + area() +
                 "\nPerimetro:" + perimetro() +
                 "\nDiâmetro:" + diametro() +

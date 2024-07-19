@@ -7,18 +7,18 @@ public class Escaleno extends Triangulo {
     @Override
     public double area() {
 
-
-        return Math.sqrt( semiperimetro() * ( semiperimetro() - getLado1()) * ( semiperimetro() - getLado2()) * ( semiperimetro() - getLado3()));
+        return Math.sqrt(semiperimetro() * (semiperimetro() - getLado1()) * (semiperimetro() - getLado2()) * (semiperimetro() - getLado3()));
 
     }
+
     @Override
-    public double perimetro () {
+    public double perimetro() {
 
         return getLado1() + getLado2() + getLado3();
 
     }
 
-    public double semiperimetro () {
+    public double semiperimetro() {
 
         return perimetro() / 2;
 
@@ -30,7 +30,8 @@ public class Escaleno extends Triangulo {
         return "\nTriângulo Escaleno:" +
                 "\nÁrea:" + area() +
                 "\nPerimetro:" + perimetro() +
-                "\nSemiperímetro:" + semiperimetro();
+                "\nSemiperímetro:" + semiperimetro() +
+                "\n-----------------------------";
 
     }
 }

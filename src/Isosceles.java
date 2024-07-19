@@ -6,19 +6,20 @@ public class Isosceles extends Triangulo {
     }
 
     @Override
-    public double area () {
+    public double area() {
 
         return getLado1() * altura() / 2;
 
     }
 
     @Override
-    public double perimetro () {
+    public double perimetro() {
 
         return getLado1() + 2 * getLado2();
 
     }
-    public double altura () {
+
+    public double altura() {
 
         return Math.sqrt(Math.pow(getLado2(), 2 - Math.pow(getLado2(), 2) / 4));
 
@@ -30,7 +31,8 @@ public class Isosceles extends Triangulo {
         return "\nTriângulo Isósceles:" +
                 "\nÁrea:" + area() +
                 "\nPerimetro:" + perimetro() +
-                "\nAltura:" + altura();
+                "\nAltura:" + altura() +
+                "\n-----------------------------";
 
     }
 }
