@@ -43,7 +43,9 @@ public class Main {
 
                     System.out.println("Senha inválida. Tentativas restantes: 1");
 
-                } else if (erro == 3) {
+                } else
+
+                {
 
                     System.out.println("Senha inválida. Sistema sendo finalizado.");
                     System.exit(0);
@@ -239,15 +241,18 @@ public class Main {
 
                     codigo = sc.nextInt();
 
-                    while (codigo >= operaçoesMain.getFORMAS().size() && codigo <= operaçoesMain.getFORMAS().size()) {
+                    if (codigo != operaçoesMain.getFORMAS().size()) {
 
-                        System.out.println("Código inexistente. Insira novamente:");
-                        codigo = sc.nextInt();
+                        System.out.println("Código inexistente.");
 
                     }
 
-                    operaçoesMain.removerItem(codigo);
-                    System.out.println("Forma removida com sucesso.");
+                    else {
+
+                        operaçoesMain.removerItem(codigo);
+                        System.out.println("Forma removida com sucesso.");
+
+                    }
 
                 }
 
