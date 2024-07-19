@@ -162,12 +162,9 @@ public class Main {
                             }
                         } else if (escolhaForma == 4) {
 
-                            double lado = 0;
-                            double lado1 = 0;
-                            double lado2 = 0;
 
                             System.out.println("Insira o primeiro lado do triângulo.");
-                            lado = sc.nextDouble();
+                            double lado = sc.nextDouble();
 
                             if (lado < 0) {
 
@@ -176,7 +173,7 @@ public class Main {
                             }
 
                             System.out.println("Insira o segundo lado do triângulo:");
-                            lado1 = sc.nextDouble();
+                            double lado1 = sc.nextDouble();
 
                             if (lado1 < 0) {
 
@@ -185,13 +182,15 @@ public class Main {
                             }
 
                             System.out.println("Insira o terceiro lado do triângulo:");
-                            lado2 = sc.nextDouble();
+                            double lado2 = sc.nextDouble();
 
-                            if (lado2 < 0 && lado + lado1 <= lado2 || lado1 + lado2 <= lado || lado2 + lado <= lado1 ) {
+                            if (lado2 < 0 ) {
 
                                 System.out.println("Lado inválido.");
 
-                            } else {
+                            }
+
+                            if ( lado < lado1+lado2 && lado1 < lado+lado2 && lado2 < lado+lado1) {
 
                                 if (lado != lado1 && lado != lado2 && lado1 != lado && lado1 != lado2 && lado2 != lado && lado2 != lado1) {
 
@@ -199,19 +198,30 @@ public class Main {
                                     operaçoesMain.adicionarItem(trianguloEscaleno);
                                     System.out.println("Triângulo Escaleno adicionado com sucesso.");
 
-                                } else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
+                                }
+
+                                else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
 
                                     Forma trianguloEquilatero = new Equilatero(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloEquilatero);
                                     System.out.println("Triângulo Equilatero adicionado com sucesso.");
 
-                                } else {
+                                }
+
+                                else {
 
                                     Forma trianguloIsosceles = new Isosceles(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloIsosceles);
                                     System.out.println("Triângulo Isósceles adicionado com sucesso.");
 
                                 }
+
+                            }
+
+                            else {
+
+                                System.out.println("Triângulo inválido.");
+
                             }
                         }
                     }
