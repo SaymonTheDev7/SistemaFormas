@@ -162,8 +162,12 @@ public class Main {
                             }
                         } else if (escolhaForma == 4) {
 
+                            double lado = 0;
+                            double lado1 = 0;
+                            double lado2 = 0;
+
                             System.out.println("Insira o primeiro lado do triângulo.");
-                            double lado = sc.nextDouble();
+                            lado = sc.nextDouble();
 
                             if (lado < 0) {
 
@@ -172,7 +176,7 @@ public class Main {
                             }
 
                             System.out.println("Insira o segundo lado do triângulo:");
-                            double lado1 = sc.nextDouble();
+                            lado1 = sc.nextDouble();
 
                             if (lado1 < 0) {
 
@@ -180,10 +184,10 @@ public class Main {
 
                             }
 
-                            System.out.println("Insira o segundo lado do triângulo:");
-                            double lado2 = sc.nextDouble();
+                            System.out.println("Insira o terceiro lado do triângulo:");
+                            lado2 = sc.nextDouble();
 
-                            if (lado2 < 0) {
+                            if (lado2 < 0 && lado + lado1 <= lado2 || lado1 + lado2 <= lado || lado2 + lado <= lado1 ) {
 
                                 System.out.println("Lado inválido.");
 
