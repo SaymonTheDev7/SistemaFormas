@@ -258,7 +258,7 @@ public class Main {
 
                     codigo = sc.nextInt();
 
-                    if (codigo != operaçoesMain.getFORMAS().size()) {
+                    if (codigo >= operaçoesMain.getFORMAS().size()) {
 
                         System.out.println("Código inexistente.");
 
