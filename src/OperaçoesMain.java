@@ -29,7 +29,6 @@ public class OperaçoesMain {
 
         for (Forma listaFormas : FORMAS) {
 
-
             formas += listaFormas + "\n" + "Código da forma: " + codigo + "\n-----------------------------";
 
             codigo++;
