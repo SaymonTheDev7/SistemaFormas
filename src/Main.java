@@ -217,13 +217,13 @@ public class Main {
 
                             if (lado < lado1 + lado2 && lado1 < lado + lado2 && lado2 < lado + lado1) {
 
-                                if (lado != lado1 && lado != lado2 && lado1 != lado && lado1 != lado2 && lado2 != lado && lado2 != lado1) {
+                                if (lado != lado1 && lado != lado2 && lado1 != lado2) {
 
                                     Forma trianguloEscaleno = new Escaleno(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloEscaleno);
                                     System.out.println("Triângulo Escaleno adicionado com sucesso.");
 
-                                } else if (lado == lado1 && lado == lado2 || lado1 == lado && lado1 == lado2 || lado2 == lado && lado2 == lado1) {
+                                } else if (lado == lado1 && lado == lado2) {
 
                                     Forma trianguloEquilatero = new Equilatero(lado, lado1, lado2);
                                     operaçoesMain.adicionarItem(trianguloEquilatero);
@@ -274,7 +274,7 @@ public class Main {
 
                 case 3: {
 
-                    if (operaçoesMain.getFORMAS().size() == 0) {
+                    if (operaçoesMain.getFORMAS().size() <= 0) {
 
                         System.out.println("Nenhuma forma cadastrada.");
 
